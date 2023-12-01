@@ -1,0 +1,5 @@
+Package: pullbasedagent
+Version: 1.0.3
+Maintainer: Margo Networks
+Architecture: all
+Description: Package used for configuration management.

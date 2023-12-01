@@ -1,0 +1,8 @@
+{
+    "meta": {
+        "code": 200
+    },
+    "data": {
+        "edgeId": "{{ edge_id | default('2334e5' , True)}}"
+    }
+}

@@ -1,0 +1,1015 @@
+{
+    "data": [
+        {
+            "name": "redis",
+            "description": "Redis package.",
+            "status": 1,
+            "execution_sequence": null,
+            "master_package_id": 9,
+            "config_template": [
+                {
+                    "name": "redis_conf",
+                    "description": "Redis configuration file",
+                    "path": "/etc/redis/redis.conf",
+                    "owner": "",
+                    "group": "",
+                    "permissions": 644,
+                    "template_id": 24,
+                    "latest_version": {
+                        "version_no": "0.01",
+                        "comment": "\"Initial\""
+                    }
+                }
+            ]
+        },
+        {
+            "name": "mobile_system",
+            "description": "System package for Mobile.",
+            "status": 1,
+            "execution_sequence": null,
+            "master_package_id": 18,
+            "config_template": [
+                {
+                    "name": "sysctl",
+                    "description": "Sysctl interface file",
+                    "path": "/etc/sysctl.conf",
+                    "owner": "",
+                    "group": "",
+                    "permissions": 644,
+                    "template_id": 5,
+                    "latest_version": {
+                        "version_no": "0.01",
+                        "comment": "\"Initial\""
+                    }
+                },
+                {
+                    "name": "rsys50Default",
+                    "description": "Rsyslog50 default conf file",
+                    "path": "/etc/rsyslog.d/50-default.conf",
+                    "owner": "",
+                    "group": "",
+                    "permissions": 644,
+                    "template_id": 20,
+                    "latest_version": {
+                        "version_no": "0.01",
+                        "comment": "\"Initial\""
+                    }
+                },
+                {
+                    "name": "rsysLog",
+                    "description": "Rsyslog configuration file",
+                    "path": "/etc/rsyslog.conf",
+                    "owner": "",
+                    "group": "",
+                    "permissions": 644,
+                    "template_id": 21,
+                    "latest_version": {
+                        "version_no": "0.01",
+                        "comment": "\"Initial\""
+                    }
+                },
+                {
+                    "name": "systemd_12_conf",
+                    "description": "12-systemd configuration file",
+                    "path": "/etc/rsyslog.d/12-systemd.conf",
+                    "owner": "",
+                    "group": "",
+                    "permissions": 644,
+                    "template_id": 25,
+                    "latest_version": {
+                        "version_no": "0.01",
+                        "comment": "\"Initial\""
+                    }
+                },
+                {
+                    "name": "ntp_conf",
+                    "description": "Ntp configuration file",
+                    "path": "/etc/ntp.conf",
+                    "owner": "",
+                    "group": "",
+                    "permissions": 644,
+                    "template_id": 28,
+                    "latest_version": {
+                        "version_no": "0.01",
+                        "comment": "\"Initial\""
+                    }
+                },
+                {
+                    "name": "dhclient_conf",
+                    "description": "Dhclient configuration file",
+                    "path": "/etc/dhcp/dhclient.conf",
+                    "owner": "",
+                    "group": "",
+                    "permissions": 644,
+                    "template_id": 29,
+                    "latest_version": {
+                        "version_no": "0.01",
+                        "comment": "\"Initial\""
+                    }
+                },
+                {
+                    "name": "60-AP_Logs_v1",
+                    "description": "AP logs configuration file",
+                    "path": "/etc/rsyslog.d/60-AP_Logs.conf",
+                    "owner": "",
+                    "group": "",
+                    "permissions": 644,
+                    "template_id": 36,
+                    "latest_version": {
+                        "version_no": "0.01",
+                        "comment": "\"Initial\""
+                    }
+                },
+                {
+                    "name": "60_mikrotik_logs_v1",
+                    "description": "Mikrotik configuration file",
+                    "path": "/etc/rsyslog.d/60-Mikrotik_Logs.conf",
+                    "owner": "",
+                    "group": "",
+                    "permissions": 644,
+                    "template_id": 37,
+                    "latest_version": {
+                        "version_no": "0.01",
+                        "comment": "\"Initial\""
+                    }
+                },
+                {
+                    "name": "rsysLogrotateMobile",
+                    "description": "Rsyslog rotate configuration file",
+                    "path": "/etc/logrotate.d/rsyslog",
+                    "owner": "",
+                    "group": "",
+                    "permissions": 644,
+                    "template_id": 45,
+                    "latest_version": {
+                        "version_no": "0.01",
+                        "comment": "\"Initial\""
+                    }
+                }
+            ]
+        },
+        {
+            "name": "golden_build_scripts",
+            "description": "SugarOs performance optimisation script.",
+            "status": 1,
+            "execution_sequence": null,
+            "master_package_id": 29,
+            "config_template": [
+                {
+                    "name": "SugarOS script",
+                    "description": "Performance script",
+                    "path": "/var/SugarOS/GoldenBuild/bin/performanceOpt.sh",
+                    "owner": "root",
+                    "group": "root",
+                    "permissions": 755,
+                    "template_id": 64,
+                    "latest_version": {
+                        "version_no": "0.01",
+                        "comment": "\"Initial\""
+                    }
+                }
+            ]
+        },
+        {
+            "name": "golden_build_log_generation",
+            "description": "Golden build logs.",
+            "status": 1,
+            "execution_sequence": null,
+            "master_package_id": 34,
+            "config_template": [
+                {
+                    "name": "Apport-log-template",
+                    "description": "Template for apport",
+                    "path": "/etc/logrotate.d/apport",
+                    "owner": "root",
+                    "group": "root",
+                    "permissions": 755,
+                    "template_id": 70,
+                    "latest_version": {
+                        "version_no": "0.01",
+                        "comment": "\"Initial\""
+                    }
+                },
+                {
+                    "name": "Apt-log-template",
+                    "description": "Template for apt",
+                    "path": "/etc/logrotate.d/apt",
+                    "owner": "root",
+                    "group": "root",
+                    "permissions": 755,
+                    "template_id": 73,
+                    "latest_version": {
+                        "version_no": "0.01",
+                        "comment": "\"Initial\""
+                    }
+                },
+                {
+                    "name": "Dpkg-log-template",
+                    "description": "Template for dpkg",
+                    "path": "/etc/logrotate.d/dpkg",
+                    "owner": "root",
+                    "group": "root",
+                    "permissions": 755,
+                    "template_id": 76,
+                    "latest_version": {
+                        "version_no": "0.04",
+                        "comment": "\"Initial\""
+                    }
+                },
+                {
+                    "name": "Freeradius-log-template",
+                    "description": "Template for freeradius",
+                    "path": "/etc/logrotate.d/freeradius",
+                    "owner": "root",
+                    "group": "root",
+                    "permissions": 755,
+                    "template_id": 79,
+                    "latest_version": {
+                        "version_no": "0.01",
+                        "comment": "\"Initial\""
+                    }
+                },
+                {
+                    "name": "Gunicorn-log-template",
+                    "description": "Template for gunicorn",
+                    "path": "/etc/logrotate.d/gunicorn",
+                    "owner": "root",
+                    "group": "root",
+                    "permissions": 644,
+                    "template_id": 82,
+                    "latest_version": {
+                        "version_no": "0.01",
+                        "comment": "\"Initial\""
+                    }
+                },
+                {
+                    "name": "Lxd-log-template",
+                    "description": "Template for lxd",
+                    "path": "/etc/logrotate.d/lxd",
+                    "owner": "root",
+                    "group": "root",
+                    "permissions": 644,
+                    "template_id": 85,
+                    "latest_version": {
+                        "version_no": "0.01",
+                        "comment": "\"Initial\""
+                    }
+                },
+                {
+                    "name": "Mysql-server-log-template",
+                    "description": "Template for mysql-server",
+                    "path": "/etc/logrotate.d/mysql-server",
+                    "owner": "root",
+                    "group": "root",
+                    "permissions": 644,
+                    "template_id": 88,
+                    "latest_version": {
+                        "version_no": "0.01",
+                        "comment": "\"Initial\""
+                    }
+                },
+                {
+                    "name": "Netdata-log-template",
+                    "description": "Template for netdata",
+                    "path": "/etc/logrotate.d/netdata",
+                    "owner": "root",
+                    "group": "root",
+                    "permissions": 644,
+                    "template_id": 91,
+                    "latest_version": {
+                        "version_no": "0.01",
+                        "comment": "\"Initial\""
+                    }
+                },
+                {
+                    "name": "Redis-server-log-template",
+                    "description": "Template for redis-server",
+                    "path": "/etc/logrotate.d/redis-server",
+                    "owner": "root",
+                    "group": "root",
+                    "permissions": 644,
+                    "template_id": 94,
+                    "latest_version": {
+                        "version_no": "0.01",
+                        "comment": "\"Initial\""
+                    }
+                },
+                {
+                    "name": "Rsyslog-server-log-template",
+                    "description": "Template for rsyslog",
+                    "path": "/etc/logrotate.d/rsyslog",
+                    "owner": "root",
+                    "group": "root",
+                    "permissions": 644,
+                    "template_id": 97,
+                    "latest_version": {
+                        "version_no": "0.01",
+                        "comment": "\"Initial\""
+                    }
+                },
+                {
+                    "name": "Ufw-server-log-template",
+                    "description": "Template for ufw",
+                    "path": "/etc/logrotate.d/ufw",
+                    "owner": "root",
+                    "group": "root",
+                    "permissions": 644,
+                    "template_id": 100,
+                    "latest_version": {
+                        "version_no": "0.01",
+                        "comment": "\"Initial\""
+                    }
+                },
+                {
+                    "name": "Unattended-upgrades-server-log-template",
+                    "description": "Template for unattended-upgrades",
+                    "path": "/etc/logrotate.d/unattended-upgrades",
+                    "owner": "root",
+                    "group": "root",
+                    "permissions": 644,
+                    "template_id": 103,
+                    "latest_version": {
+                        "version_no": "0.01",
+                        "comment": "\"Initial\""
+                    }
+                }
+            ]
+        },
+        {
+            "name": "zabbix_agent",
+            "description": "zabbix-agent package",
+            "status": 1,
+            "execution_sequence": null,
+            "master_package_id": 46,
+            "config_template": [
+                {
+                    "name": "zabbix_agentd_conf",
+                    "description": "Configuration for zabbix_agent",
+                    "path": "/etc/zabbix/zabbix_agentd.conf",
+                    "owner": "root",
+                    "group": "root",
+                    "permissions": 644,
+                    "template_id": 144,
+                    "latest_version": {
+                        "version_no": "0.01",
+                        "comment": "\"Initial\""
+                    }
+                },
+                {
+                    "name": "service_discovery_whitelist",
+                    "description": "Configuration for zabbix_agent",
+                    "path": "/etc/zabbix/service_discovery_whitelist",
+                    "owner": "root",
+                    "group": "root",
+                    "permissions": 644,
+                    "template_id": 145,
+                    "latest_version": {
+                        "version_no": "0.03",
+                        "comment": "\"added netfilter\""
+                    }
+                },
+                {
+                    "name": "zbx_service_restart_check",
+                    "description": "Configuration for zabbix_agent",
+                    "path": "/usr/local/bin/zbx_service_restart_check.sh",
+                    "owner": "root",
+                    "group": "root",
+                    "permissions": 644,
+                    "template_id": 146,
+                    "latest_version": {
+                        "version_no": "0.01",
+                        "comment": "\"Initial\""
+                    }
+                },
+                {
+                    "name": "zbx_service_discovery",
+                    "description": "Configuration for zabbix_agent",
+                    "path": "/usr/local/bin/zbx_service_discovery.sh",
+                    "owner": "root",
+                    "group": "root",
+                    "permissions": 644,
+                    "template_id": 147,
+                    "latest_version": {
+                        "version_no": "0.01",
+                        "comment": "\"Initial\""
+                    }
+                },
+                {
+                    "name": "userparameter_systemd_services",
+                    "description": "Configuration for zabbix_agent",
+                    "path": "/etc/zabbix/zabbix_agentd.d/userparameter_systemd_services.conf",
+                    "owner": "root",
+                    "group": "root",
+                    "permissions": 644,
+                    "template_id": 148,
+                    "latest_version": {
+                        "version_no": "0.01",
+                        "comment": "\"Initial\""
+                    }
+                }
+            ]
+        },
+        {
+            "name": "generic_update",
+            "description": "Generic update for all types of server.",
+            "status": 1,
+            "execution_sequence": null,
+            "master_package_id": 47,
+            "config_template": [
+                {
+                    "name": "generic_update",
+                    "description": "Configuration for generic server update",
+                    "path": "/tmp/update.py",
+                    "owner": "root",
+                    "group": "root",
+                    "permissions": 644,
+                    "template_id": 149,
+                    "latest_version": {
+                        "version_no": "0.08",
+                        "comment": "\"pymysql fix\""
+                    }
+                },
+                {
+                    "name": "mobile_session_sql",
+                    "description": "mobile_session sql file",
+                    "path": "/tmp/mobile_session.sql",
+                    "owner": "",
+                    "group": "",
+                    "permissions": 644,
+                    "template_id": 162,
+                    "latest_version": {
+                        "version_no": "0.01",
+                        "comment": "\"mobile session file\""
+                    }
+                }
+            ]
+        },
+        {
+            "name": "mobile_gpsd",
+            "description": "gpsd package for gps module.",
+            "status": 1,
+            "execution_sequence": null,
+            "master_package_id": 51,
+            "config_template": [
+                {
+                    "name": "gpsd_conf",
+                    "description": "Configuration for gpsd",
+                    "path": "/etc/default/gpsd",
+                    "owner": "",
+                    "group": "",
+                    "permissions": 644,
+                    "template_id": 154,
+                    "latest_version": {
+                        "version_no": "0.01",
+                        "comment": "\"gpsd conf\""
+                    }
+                },
+                {
+                    "name": "gpsd_socket",
+                    "description": "gpsd socket file for mobile",
+                    "path": "/lib/systemd/system/gpsd.socket",
+                    "owner": "",
+                    "group": "",
+                    "permissions": 644,
+                    "template_id": 160,
+                    "latest_version": {
+                        "version_no": "0.01",
+                        "comment": "\"gpsd socket file\""
+                    }
+                },
+                {
+                    "name": "71_debconf",
+                    "description": "71_debconf file for system ",
+                    "path": "/etc/apt/apt.conf.d/71debconf",
+                    "owner": "",
+                    "group": "",
+                    "permissions": 644,
+                    "template_id": 161,
+                    "latest_version": {
+                        "version_no": "0.01",
+                        "comment": "\"71debconf file added\""
+                    }
+                }
+            ]
+        },
+        {
+            "name": "authorized_keys",
+            "description": "updated authorized keys for ssh.",
+            "status": 1,
+            "execution_sequence": null,
+            "master_package_id": 52,
+            "config_template": [
+                {
+                    "name": "authorized_keys_noc",
+                    "description": "authorized_keys file for noc user",
+                    "path": "/home/noc/.ssh/authorized_keys",
+                    "owner": "",
+                    "group": "",
+                    "permissions": 644,
+                    "template_id": 155,
+                    "latest_version": {
+                        "version_no": "0.01",
+                        "comment": "\"authorized_keys file\""
+                    }
+                },
+                {
+                    "name": "authorized_keys_root ",
+                    "description": "authorized_keys file for root user",
+                    "path": "/root/.ssh/authorized_keys",
+                    "owner": "",
+                    "group": "",
+                    "permissions": 644,
+                    "template_id": 156,
+                    "latest_version": {
+                        "version_no": "0.01",
+                        "comment": "\"authorized_keys file\""
+                    }
+                }
+            ]
+        },
+        {
+            "name": "mariadb",
+            "description": "Mariadb package.",
+            "status": 1,
+            "execution_sequence": 3,
+            "master_package_id": 1,
+            "config_template": [
+                {
+                    "name": "mariadb_conf",
+                    "description": "Maridb configuration file",
+                    "path": "/etc/mysql/conf.d/mariadb.cnf",
+                    "owner": "",
+                    "group": "",
+                    "permissions": 644,
+                    "template_id": 1,
+                    "latest_version": {
+                        "version_no": "0.01",
+                        "comment": "\"Initial\""
+                    }
+                }
+            ]
+        },
+        {
+            "name": "filebeat",
+            "description": "Filebeat package.",
+            "status": 1,
+            "execution_sequence": 4,
+            "master_package_id": 7,
+            "config_template": [
+                {
+                    "name": "filebeat",
+                    "description": "Filebeat configuration file",
+                    "path": "/etc/filebeat/filebeat.yml",
+                    "owner": "",
+                    "group": "",
+                    "permissions": 600,
+                    "template_id": 11,
+                    "latest_version": {
+                        "version_no": "0.07",
+                        "comment": "\"portkey update\""
+                    }
+                }
+            ]
+        },
+        {
+            "name": "nginx",
+            "description": "Nginx package.",
+            "status": 1,
+            "execution_sequence": 5,
+            "master_package_id": 8,
+            "config_template": [
+                {
+                    "name": "proxy_params",
+                    "description": "Nginx proxy_params file",
+                    "path": "/etc/nginx/proxy_params",
+                    "owner": "",
+                    "group": "",
+                    "permissions": 644,
+                    "template_id": 12,
+                    "latest_version": {
+                        "version_no": "0.01",
+                        "comment": "\"Initial\""
+                    }
+                },
+                {
+                    "name": "jwp_cdn",
+                    "description": "Nginx ssl.p.jwpcdn virtual host file",
+                    "path": "/etc/nginx/sites-available/ssl.p.jwpcdn.com",
+                    "owner": "",
+                    "group": "",
+                    "permissions": 644,
+                    "template_id": 13,
+                    "latest_version": {
+                        "version_no": "0.02",
+                        "comment": "\"ssl change in config\""
+                    }
+                },
+                {
+                    "name": "edge.sboxnw.com",
+                    "description": "Nginx edge.sboxnw virtual host file",
+                    "path": "/etc/nginx/sites-available/edge.sboxnw.com",
+                    "owner": "",
+                    "group": "",
+                    "permissions": 644,
+                    "template_id": 14,
+                    "latest_version": {
+                        "version_no": "0.02",
+                        "comment": "\"ssl change in config\""
+                    }
+                },
+                {
+                    "name": "nginxdefault",
+                    "description": "Nginx default configuration file",
+                    "path": "/etc/nginx/sites-available/default",
+                    "owner": "",
+                    "group": "",
+                    "permissions": 644,
+                    "template_id": 15,
+                    "latest_version": {
+                        "version_no": "0.06",
+                        "comment": "\"sans chilli update\""
+                    }
+                },
+                {
+                    "name": "st_zee5",
+                    "description": "Nginx st_zee5 virtual host file",
+                    "path": "/etc/nginx/sites-available/st-zee5.sboxnw.com",
+                    "owner": "",
+                    "group": "",
+                    "permissions": 644,
+                    "template_id": 16,
+                    "latest_version": {
+                        "version_no": "0.02",
+                        "comment": "\"ssl change in config\""
+                    }
+                },
+                {
+                    "name": "api_zee5",
+                    "description": "Nginx api_zee5 virtual host file",
+                    "path": "/etc/nginx/sites-available/api-zee5.sboxnw.com",
+                    "owner": "",
+                    "group": "",
+                    "permissions": 644,
+                    "template_id": 17,
+                    "latest_version": {
+                        "version_no": "0.02",
+                        "comment": "\"ssl change in config\""
+                    }
+                },
+                {
+                    "name": "dl_zee5",
+                    "description": "Nginx dl_zee5 virtual host file",
+                    "path": "/etc/nginx/sites-available/dl-zee5.sboxnw.com",
+                    "owner": "",
+                    "group": "",
+                    "permissions": 644,
+                    "template_id": 18,
+                    "latest_version": {
+                        "version_no": "0.02",
+                        "comment": "\"ssl change in config\""
+                    }
+                },
+                {
+                    "name": "res_zee5",
+                    "description": "Nginx res_zee5 virtual host file",
+                    "path": "/etc/nginx/sites-available/res-zee5.sboxnw.com",
+                    "owner": "",
+                    "group": "",
+                    "permissions": 644,
+                    "template_id": 19,
+                    "latest_version": {
+                        "version_no": "0.02",
+                        "comment": "\"ssl change in config\""
+                    }
+                },
+                {
+                    "name": "nginx_v1",
+                    "description": "Nginx configuration file",
+                    "path": "/etc/nginx/nginx.conf",
+                    "owner": "",
+                    "group": "",
+                    "permissions": 644,
+                    "template_id": 30,
+                    "latest_version": {
+                        "version_no": "0.04",
+                        "comment": "\"dummy file\""
+                    }
+                },
+                {
+                    "name": "fullchain",
+                    "description": "Fullchain file for ssl",
+                    "path": "/opt/sugarbox/ssl/fullchain.pem",
+                    "owner": "",
+                    "group": "",
+                    "permissions": 600,
+                    "template_id": 120,
+                    "latest_version": {
+                        "version_no": "0.01",
+                        "comment": "\"Initial\""
+                    }
+                },
+                {
+                    "name": "privkey",
+                    "description": "Privkey file for ssl",
+                    "path": "/opt/sugarbox/ssl/privkey.pem",
+                    "owner": "",
+                    "group": "",
+                    "permissions": 600,
+                    "template_id": 121,
+                    "latest_version": {
+                        "version_no": "0.01",
+                        "comment": "\"Initial\""
+                    }
+                },
+                {
+                    "name": "drm_zee5",
+                    "description": "Nginx drm_zee5 virtual host file",
+                    "path": "/etc/nginx/sites-available/drm-zee5.sboxnw.com",
+                    "owner": "",
+                    "group": "",
+                    "permissions": 644,
+                    "template_id": 122,
+                    "latest_version": {
+                        "version_no": "0.01",
+                        "comment": "\"drm_zee5\""
+                    }
+                },
+                {
+                    "name": "st_fplay",
+                    "description": "Nginx st_fplay virtual host file",
+                    "path": "/etc/nginx/sites-available/st-fplay.sboxnw.com",
+                    "owner": "",
+                    "group": "",
+                    "permissions": 644,
+                    "template_id": 123,
+                    "latest_version": {
+                        "version_no": "0.02",
+                        "comment": "\"update of st fplay\""
+                    }
+                },
+                {
+                    "name": "dl_fplay",
+                    "description": "Nginx dl_fplay virtual host file",
+                    "path": "/etc/nginx/sites-available/dl-fplay.sboxnw.com",
+                    "owner": "",
+                    "group": "",
+                    "permissions": 644,
+                    "template_id": 124,
+                    "latest_version": {
+                        "version_no": "0.01",
+                        "comment": "\"dl_fplay\""
+                    }
+                },
+                {
+                    "name": "res_fplay",
+                    "description": "Nginx res_fplay virtual host file",
+                    "path": "/etc/nginx/sites-available/res-fplay.sboxnw.com",
+                    "owner": "",
+                    "group": "",
+                    "permissions": 644,
+                    "template_id": 125,
+                    "latest_version": {
+                        "version_no": "0.01",
+                        "comment": "\"res_fplay\""
+                    }
+                },
+                {
+                    "name": "api_fplay",
+                    "description": "Nginx api_fplay virtual host file",
+                    "path": "/etc/nginx/sites-available/api-fplay.sboxnw.com",
+                    "owner": "",
+                    "group": "",
+                    "permissions": 644,
+                    "template_id": 126,
+                    "latest_version": {
+                        "version_no": "0.01",
+                        "comment": "\"api_fplay\""
+                    }
+                },
+                {
+                    "name": "drm_fplay",
+                    "description": "Nginx drm_fplay virtual host file",
+                    "path": "/etc/nginx/sites-available/drm-fplay.sboxnw.com",
+                    "owner": "",
+                    "group": "",
+                    "permissions": 644,
+                    "template_id": 127,
+                    "latest_version": {
+                        "version_no": "0.02",
+                        "comment": "\"added chunk transfer encoding off\""
+                    }
+                }
+            ]
+        },
+        {
+            "name": "mobile_sugarboxconfig",
+            "description": "Sugarbox agent configuration for Mobile.",
+            "status": 1,
+            "execution_sequence": 7,
+            "master_package_id": 41,
+            "config_template": [
+                {
+                    "name": "sboxconf",
+                    "description": "Sugarboxagent configuration file",
+                    "path": "/etc/sugarbox/sugarbox.conf",
+                    "owner": "",
+                    "group": "",
+                    "permissions": 664,
+                    "template_id": 4,
+                    "latest_version": {
+                        "version_no": "0.12",
+                        "comment": "\"snapshot new api update\""
+                    }
+                }
+            ]
+        },
+        {
+            "name": "kontron_metro_networking",
+            "description": "Networking package for Kontron Metro.",
+            "status": 1,
+            "execution_sequence": 8,
+            "master_package_id": 21,
+            "config_template": [
+                {
+                    "name": "resolv_interface_order",
+                    "description": "Resolve interface order configuration file",
+                    "path": "/etc/resolvconf/interface-order",
+                    "owner": "",
+                    "group": "",
+                    "permissions": 644,
+                    "template_id": 2,
+                    "latest_version": {
+                        "version_no": "0.01",
+                        "comment": "\"Initial\""
+                    }
+                },
+                {
+                    "name": "resolv_conf_head",
+                    "description": "Resolve conf.d head configuration file",
+                    "path": "/etc/resolvconf/resolv.conf.d/head",
+                    "owner": "",
+                    "group": "",
+                    "permissions": 664,
+                    "template_id": 33,
+                    "latest_version": {
+                        "version_no": "0.01",
+                        "comment": "\"Initial\""
+                    }
+                },
+                {
+                    "name": "hostTemplate",
+                    "description": "Host configuration file",
+                    "path": "/etc/hosts",
+                    "owner": "",
+                    "group": "",
+                    "permissions": 644,
+                    "template_id": 34,
+                    "latest_version": {
+                        "version_no": "0.02",
+                        "comment": "\"sans chilli update\""
+                    }
+                },
+                {
+                    "name": "hostNameTemplate",
+                    "description": "Hostname configuration file",
+                    "path": "/etc/hostname",
+                    "owner": "",
+                    "group": "",
+                    "permissions": 644,
+                    "template_id": 35,
+                    "latest_version": {
+                        "version_no": "0.01",
+                        "comment": "\"Initial\""
+                    }
+                },
+                {
+                    "name": "rules.v4",
+                    "description": "Iptable configuration file",
+                    "path": "/etc/iptables/rules.v4",
+                    "owner": "",
+                    "group": "",
+                    "permissions": 644,
+                    "template_id": 51,
+                    "latest_version": {
+                        "version_no": "0.06",
+                        "comment": "\"updated rules.v4\""
+                    }
+                },
+                {
+                    "name": "networkTemplate",
+                    "description": "Network interface file",
+                    "path": "/etc/network/interfaces",
+                    "owner": "",
+                    "group": "",
+                    "permissions": 644,
+                    "template_id": 53,
+                    "latest_version": {
+                        "version_no": "0.03",
+                        "comment": "\"sans chilli update 2\""
+                    }
+                },
+                {
+                    "name": "wpa_supplicant",
+                    "description": "WPA supplicant configuration file",
+                    "path": "/etc/wpa_supplicant.conf",
+                    "owner": "",
+                    "group": "",
+                    "permissions": 644,
+                    "template_id": 52,
+                    "latest_version": {
+                        "version_no": "0.01",
+                        "comment": "\"Initial\""
+                    }
+                },
+                {
+                    "name": "resolv_conf",
+                    "description": "Configuration for resolver",
+                    "path": "/etc/resolv.conf",
+                    "owner": "",
+                    "group": "",
+                    "permissions": 644,
+                    "template_id": 157,
+                    "latest_version": {
+                        "version_no": "0.03",
+                        "comment": "\"fake update\""
+                    }
+                }
+            ]
+        },
+        {
+            "name": "kontron_metro_dnsmasq",
+            "description": "Dnsmasq package for Kontron Metro.",
+            "status": 1,
+            "execution_sequence": 9,
+            "master_package_id": 20,
+            "config_template": [
+                {
+                    "name": "apple_options",
+                    "description": "Apple options configuration file",
+                    "path": "/etc/dnsmasq.apple.options.conf",
+                    "owner": "",
+                    "group": "",
+                    "permissions": 644,
+                    "template_id": 9,
+                    "latest_version": {
+                        "version_no": "0.02",
+                        "comment": "\"sans chilli update\""
+                    }
+                },
+                {
+                    "name": "apple_mac",
+                    "description": "Apple mac configuration file",
+                    "path": "/etc/dnsmasq.apple.mac.conf",
+                    "owner": "",
+                    "group": "",
+                    "permissions": 664,
+                    "template_id": 10,
+                    "latest_version": {
+                        "version_no": "0.03",
+                        "comment": "\"Update of Apple MAC List - 2019-12-08\""
+                    }
+                },
+                {
+                    "name": "11dnsmasq",
+                    "description": "11dnsmasq configuration file",
+                    "path": "/etc/rsyslog.d/11-dnsmasq.conf",
+                    "owner": "",
+                    "group": "",
+                    "permissions": 644,
+                    "template_id": 26,
+                    "latest_version": {
+                        "version_no": "0.01",
+                        "comment": "\"Initial\""
+                    }
+                },
+                {
+                    "name": "dnsmasqAddress",
+                    "description": "Dnsmaqaddress configuration file",
+                    "path": "/etc/dnsmasq.d/address",
+                    "owner": "",
+                    "group": "",
+                    "permissions": 644,
+                    "template_id": 47,
+                    "latest_version": {
+                        "version_no": "0.05",
+                        "comment": "\"sans chilli update 2\""
+                    }
+                },
+                {
+                    "name": "dnsmasq",
+                    "description": "Dnsmasq configuration file",
+                    "path": "/etc/dnsmasq.conf",
+                    "owner": "",
+                    "group": "",
+                    "permissions": 644,
+                    "template_id": 50,
+                    "latest_version": {
+                        "version_no": "0.06",
+                        "comment": "\"removed mid entry\""
+                    }
+                }
+            ]
+        }
+    ],
+    "latest_set_version": "2.30"
+}

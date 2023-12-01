@@ -1,0 +1,14 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "name": "create_test1",
+            "description": "This is the first created config template"
+        },
+        {
+            "id": 2,
+            "name": "create_test2",
+            "description": "This is the 2nd created config template"
+        }
+    ]
+}

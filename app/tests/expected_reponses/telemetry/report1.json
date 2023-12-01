@@ -1,0 +1,33 @@
+{
+    "data": [
+        {
+            "edge_id": "125216",
+            "package_name": "125216.xz",
+            "report": {
+                "downloaded": {
+                    "success": true,
+                    "date_time": "26-05-2021 16:01:22"
+                },
+                "consumed": {
+                    "success": false
+                }
+            },
+            "template_set_version": "0.06"
+        },
+        {
+            "edge_id": "125216",
+            "package_name": "125216.xz",
+            "report": {
+                "downloaded": {
+                    "success": true,
+                    "date_time": "26-05-2021 16:01:22"
+                },
+                "consumed": {
+                    "success": true,
+                    "date_time": "26-05-2021 16:01:22"
+                }
+            },
+            "template_set_version": "0.05"
+        }
+    ]
+}

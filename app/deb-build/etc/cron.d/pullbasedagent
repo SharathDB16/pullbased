@@ -1,0 +1,1 @@
+0 0 * * * root /bin/bash /usr/local/pullbasedagent/src/cron_scripts/cleanup.sh

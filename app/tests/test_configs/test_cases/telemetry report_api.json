@@ -1,0 +1,57 @@
+{
+    "url": "http://pullbased/api/v1.0/{telemetry_type}/report/{id}",
+    "dbfile":"tests/db_files/telemetry_report.sql",
+    "scenarios": [
+        {
+            "method":"get",
+            "name": "Report 125216",
+            "url_params": {
+                "id": "125216",
+                "telemetry_type":"edge_telemetry"
+            },
+            "response_code": 200,
+            "expected_content": "tests/expected_reponses/telemetry/report1.json"
+        },
+        {
+            "method":"get",
+            "name": "Report 225216",
+            "url_params": {
+                "id": "225216",
+                "telemetry_type":"edge_telemetry"
+            },
+            "response_code": 200,
+            "expected_content": "tests/expected_reponses/telemetry/report2.json"
+        },
+        {
+            "method":"get",
+            "name": "First page of info list",
+            "dbfile":"tests/db_files/telemetry_report_list.sql",
+            "url_params": {
+                "id": "1",
+                "telemetry_type":"edge_telemetry_info_list"
+            },
+            "response_code": 200,
+            "expected_content": "tests/expected_reponses/telemetry/info_list_page1_schema.json"
+        },
+        {
+            "method":"get",
+            "name": "Second page of info list",
+            "url_params": {
+                "id": "2",
+                "telemetry_type":"edge_telemetry_info_list"
+            },
+            "response_code": 200,
+            "expected_content": "tests/expected_reponses/telemetry/info_list_page2_schema.json"
+        },
+        {
+            "method":"get",
+            "name": "Edge report data for 425216",
+            "url_params": {
+                "id": "425216",
+                "telemetry_type":"edge_telemetry_info"
+            },
+            "response_code": 200,
+            "expected_content": "tests/expected_reponses/telemetry/edge_info_425216_schema.json"
+        }
+    ]
+}

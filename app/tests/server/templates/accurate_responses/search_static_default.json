@@ -1,0 +1,33 @@
+{
+    "meta": {
+        "code": 200
+    },
+    "data": [
+        {
+            "masterSubnetDto":{
+                "pool":"255.255.255.0",
+                "mask":"24"
+            }
+        },
+        {
+            "masterSubnetDto":{
+                "pool":"100.64.0.0",
+                "mask":"10"
+            },
+            "subnetDto":{
+                "subnet":"100.64.2.0",
+                "mask": 10
+            }
+        },
+        {
+            "masterSubnetDto":{
+                "pool":"172.26.0.0",
+                "mask":"15"
+            },
+            "subnetDto":{
+                "subnet":"100.64.2.0",
+                "mask": 10
+            }
+        }
+    ]
+}

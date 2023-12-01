@@ -1,0 +1,141 @@
+{
+    "url" : "http://pullbased/api/v1.0/master_package/assign/{master_id}/",
+    "dbfile" : "tests/db_files/get_master_package_templates.sql",
+    "scenarios" :[
+        {
+            "method" : "post",
+            "name" : "assign master 1 to static default",
+            "url_params" :{
+                "master_id" :"1"
+            },
+            "request_params" :{
+                "json" :{
+                    "edge_type": "static",
+                    "edge_sub_type": "default"
+                }
+            },
+            "response_code": 200,
+            "expected_content" : "tests/expected_reponses/template_store/master_template/package_assigned.json"
+        },
+        {
+            "method" : "post",
+            "name" : "already master 1 to static default",
+            "url_params" :{
+                "master_id" :"1"
+            },
+            "request_params" :{
+                "json" :{
+                    "edge_type" : "static",
+                    "edge_sub_type" : "default"
+                }
+            },
+            "response_code": 200,
+            "expected_content" : "tests/expected_reponses/template_store/master_template/package_already_assigned.json"
+        },
+        {
+            "method" : "post",
+            "name" : "wrong master id assignment",
+            "url_params" :{
+                "master_id" :"4"
+            },
+            "request_params" :{
+                "json" :{
+                    "edge_type" : "static",
+                    "edge_sub_type" : "default"
+                }
+            },
+            "response_code": 400,
+            "expected_content" : "tests/expected_reponses/template_store/master_template/package_not_assigned.json"
+        },
+        {
+            "method" : "post",
+            "name" : "wrong edge_type",
+            "url_params" :{
+                "master_id" :"1"
+            },
+            "request_params" :{
+                "json" :{
+                    "edge_type" : "wrong",
+                    "edge_sub_type" : "default"
+                }
+            },
+            "response_code": 400,
+            "expected_content" : "tests/expected_reponses/template_store/master_template/package_not_assigned.json"
+        },
+        {
+            "method" : "post",
+            "name" : "assign master 2 to static default",
+            "url_params" :{
+                "master_id" :"2"
+            },
+            "request_params" :{
+                "json" :{
+                    "edge_type" : "static",
+                    "edge_sub_type" : "default"
+                }
+            },
+            "response_code": 200,
+            "expected_content" : "tests/expected_reponses/template_store/master_template/package_assigned.json"
+        },
+        {
+            "method" : "delete",
+            "name" : "remove master 1 from static default",
+            "url_params" :{
+                "master_id" :"1"
+            },
+            "request_params" :{
+                "json" :{
+                    "edge_type" : "static",
+                    "edge_sub_type" : "default"
+                }
+            },
+            "response_code": 200,
+            "expected_content" : "tests/expected_reponses/template_store/master_template/package_deleted.json"
+        },
+        {
+            "method" : "delete",
+            "name" : "Error case, remove non assigned master 1 from static default",
+            "url_params" :{
+                "master_id" :"1"
+            },
+            "request_params" :{
+                "json" :{
+                    "edge_type" : "static",
+                    "edge_sub_type" : "default"
+                }
+            },
+            "response_code": 200,
+            "expected_content" : "tests/expected_reponses/template_store/master_template/invalid_package_id.json"
+        },
+        {
+            "method" : "delete",
+            "name" : "Error case, remove non existant master 1 from mid parent_pseudo_tp",
+            "url_params" :{
+                "master_id" :"1"
+            },
+            "request_params" :{
+                "json" :{
+                    "edge_type" : "mid",
+                    "edge_sub_type" : "parent_pseudo_tp"
+                }
+            },
+            "response_code": 200,
+            "expected_content" : "tests/expected_reponses/template_store/master_template/invalid_package_id.json"
+        },
+        {
+            "method" : "delete",
+            "name" : "Error case, remove from unkonwn edge type",
+            "url_params" :{
+                "master_id" :"1"
+            },
+            "request_params" :{
+                "json" :{
+                    "edge_type" : "mid",
+                    "edge_sub_type" : "wrong"
+                }
+            },
+            "response_code": 400,
+            "expected_content" : "tests/expected_reponses/template_store/master_template/package_not_deleted.json"
+        }
+    ]
+}

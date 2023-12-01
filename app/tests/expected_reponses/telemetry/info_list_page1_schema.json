@@ -1,0 +1,116 @@
+{
+    "type":"object",
+    "properties":{
+        "meta": {
+            "type":"object",
+            "properties":{
+                "code": {
+                    "const":200
+                },
+                "timestamp": {
+                    "format":"string"
+                }
+            },
+            "required":[
+                "code",
+                "timestamp"
+            ]
+        },
+        "data": {
+            "const":[
+                {
+                    "edge_id": "125216",
+                    "package_name": "125216.xz",
+                    "template_set_version": "0.05",
+                    "ip_address": "192.168.2.44",
+                    "consumed": true,
+                    "downloaded": true,
+                    "downloaded_time": "2021-05-26 16:01:22",
+                    "consumed_time": "2021-05-26 16:01:22"
+                },
+                {
+                    "edge_id": "225216",
+                    "package_name": "225216.xz",
+                    "template_set_version": "0.05",
+                    "ip_address": "192.168.2.44",
+                    "consumed": false,
+                    "downloaded": false,
+                    "downloaded_time": null,
+                    "consumed_time": null
+                },
+                {
+                    "edge_id": "325216",
+                    "package_name": "04d3d2.xz",
+                    "template_set_version": "0.65",
+                    "ip_address": "192.168.2.45",
+                    "consumed": false,
+                    "downloaded": true,
+                    "downloaded_time": "2021-05-31 04:01:47",
+                    "consumed_time": null
+                },
+                {
+                    "edge_id": "425216",
+                    "package_name": "04d3d2.xz",
+                    "template_set_version": "0.65",
+                    "ip_address": "192.168.2.46",
+                    "consumed": false,
+                    "downloaded": true,
+                    "downloaded_time": "2021-05-31 04:01:56",
+                    "consumed_time": null
+                },
+                {
+                    "edge_id": "525216",
+                    "package_name": "04d3d2.xz",
+                    "template_set_version": "0.65",
+                    "ip_address": "192.168.2.47",
+                    "consumed": false,
+                    "downloaded": true,
+                    "downloaded_time": "2021-05-31 04:02:07",
+                    "consumed_time": null
+                },
+                {
+                    "edge_id": "625216",
+                    "package_name": "04d3d2.xz",
+                    "template_set_version": "0.65",
+                    "ip_address": "192.168.2.48",
+                    "consumed": false,
+                    "downloaded": true,
+                    "downloaded_time": "2021-05-31 04:02:16",
+                    "consumed_time": null
+                },
+                {
+                    "edge_id": "725216",
+                    "package_name": "04d3d2.xz",
+                    "template_set_version": "0.65",
+                    "ip_address": "192.168.2.49",
+                    "consumed": false,
+                    "downloaded": true,
+                    "downloaded_time": "2021-05-31 04:02:26",
+                    "consumed_time": null
+                },
+                {
+                    "edge_id": "825216",
+                    "package_name": "04d3d2.xz",
+                    "template_set_version": "0.65",
+                    "ip_address": "192.168.2.50",
+                    "consumed": false,
+                    "downloaded": true,
+                    "downloaded_time": "2021-05-31 04:02:36",
+                    "consumed_time": null
+                }
+            ]
+        },
+        "pagination": {
+            "const":{
+                "total": 8,
+                "page": 1,
+                "per_page": 20
+            }
+        }
+    },
+    "required":[
+        "meta",
+        "data",
+        "pagination"
+    ]
+}

@@ -1,0 +1,10 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "name": "First Master package",
+            "description": "This is the first master package created",
+            "status": 1
+        }
+    ]
+}

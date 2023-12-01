@@ -1,0 +1,16 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "name": "Updated master name",
+            "description": "The master name was updated for id 1",
+            "status": 0
+        },
+        {
+            "id": 2,
+            "name": "Second Master package",
+            "description": "This is the second master package created",
+            "status": 1
+        }
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    "type":"object",
+    "properties" : {
+        "data": {
+            "const":"Package generated"
+        },
+        "path": {
+            "type":"string"
+        },
+        "edge_id": {
+            "const":"232456"
+        },
+        "latest_set_version":{
+            "const":"0.03"
+        }
+    },
+    "required":[
+        "data",
+        "path",
+        "edge_id",
+        "latest_set_version"
+    ]
+}

@@ -1,0 +1,12 @@
+[Unit]
+Description=This is a service>>>>.
+After=multi-user.target
+
+[Service]
+User=noc
+Type=idle
+WorkingDirectory=/usr/local/pullbasedagent/src
+ExecStart=/usr/bin/python wsgi.py
+
+[Install]
+WantedBy=multi-user.target

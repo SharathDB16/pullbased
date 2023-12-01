@@ -1,0 +1,18 @@
+{
+    "meta": {
+        "code": 200
+    },
+    "data": {
+        "edgeType": "{{edge_type | default('static', true)}}",
+        "edgeSubType": "{{edge_sub_type|default('default', true)}}",
+        "templateId": 1,
+        "switchType" : 0,
+        "subscribers": 1024,
+        "ap": 4,
+        "wdvpnIp": "10.255.255.188",
+        "touchPointName": "TP_4_Coach_U-1291_zhoqsocorpifrxvvopcc_1575023958246_0",
+        "dpName": "CMRL",
+        "stateName": "NA",
+        "stateCode": "NA"
+    }
+}

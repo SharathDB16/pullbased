@@ -1,0 +1,13 @@
+#!/bin/bash
+
+if [ -f /tmp/itsanupgrade ]
+then
+    /bin/systemctl daemon-reload
+    /bin/systemctl restart pullBasedAgent.service
+else
+    /bin/systemctl enable pullBasedAgent.service
+    /bin/systemctl start pullBasedAgent.service
+fi
+
+chown root:root /etc/cron.d/pullbasedagent
+chmod 0644 /etc/cron.d/pullbasedagent

@@ -1,0 +1,121 @@
+{
+    "url" : "http://pullbased/api/v1.0/master_package/{master_id}",
+    "scenarios" :[
+        {
+            "name" : "Get empty master package list",
+            "method":"get",
+            "url_params" :{
+                "master_id" :""
+            },
+            "response_code": 200,
+            "expected_content" : "tests/expected_reponses/template_store/master_template/master0.json"
+        },
+        {
+            "name" : "Create first master package",
+            "method":"post",
+            "url_params" :{
+                "master_id" :""
+            },
+            "request_params" : {
+                "data":{
+                    "name": "First Master package",
+                    "description": "This is the first master package created"
+                },
+                "files":{
+                    "uninstall_file": "tests/test_configs/template_store/master_template/uninstall_file1.txt",
+                    "pre_script_file":"tests/test_configs/template_store/master_template/pre_script_file1.txt",
+                    "post_script_file":"tests/test_configs/template_store/master_template/post_script_file1.txt"
+                }
+            },
+            "response_code": 200,
+            "expected_content" : "tests/expected_reponses/template_store/master_template/master_created.json"
+        },
+        {
+            "name" : "Get single entry in master package list",
+            "method":"get",
+            "url_params" :{
+                "master_id" :""
+            },
+            "response_code": 200,
+            "expected_content" : "tests/expected_reponses/template_store/master_template/master1.json"
+        },
+        {
+            "name" : "Create 2nd master package",
+            "method":"post",
+            "url_params" :{
+                "master_id" :""
+            },
+            "request_params" : {
+                "data":{
+                    "name": "Second Master package",
+                    "description": "This is the second master package created"
+                },
+                "files":{
+                    "uninstall_file": "tests/test_configs/template_store/master_template/uninstall_file2.txt",
+                    "pre_script_file":"tests/test_configs/template_store/master_template/pre_script_file2.txt",
+                    "post_script_file":"tests/test_configs/template_store/master_template/post_script_file2.txt"
+                }
+            },
+            "response_code": 200,
+            "expected_content" : "tests/expected_reponses/template_store/master_template/master_created.json"
+        },
+        {
+            "name" : "Get 2 entries in master package list",
+            "method":"get",
+            "url_params" :{
+                "master_id" :""
+            },
+            "response_code": 200,
+            "expected_content" : "tests/expected_reponses/template_store/master_template/master2.json"
+        },
+        {
+            "name" : "Update master package 1",
+            "method":"put",
+            "url_params" :{
+                "master_id" :"1/"
+            },
+            "request_params" : {
+                "data":{
+                    "name": "Updated master name",
+                    "description": "The master name was updated for id 1"
+                },
+                "files":{
+                    "uninstall_file": "tests/test_configs/template_store/master_template/uninstall_file_updated.txt",
+                    "pre_script_file":"tests/test_configs/template_store/master_template/pre_script_file_updated.txt",
+                    "post_script_file":"tests/test_configs/template_store/master_template/post_script_file_updated.txt"
+                }
+            },
+            "response_code": 200,
+            "expected_content" : "tests/expected_reponses/template_store/master_template/master_updated.json"
+        },
+        {
+            "name" : "Error case, update non-existant master package",
+            "method":"put",
+            "url_params" :{
+                "master_id" :"5/"
+            },
+            "request_params" : {
+                "data":{
+                    "name": "Updated master name",
+                    "description": "The master name was updated for id 1"
+                },
+                "files":{
+                    "uninstall_file": "tests/test_configs/template_store/master_template/uninstall_file_updated.txt",
+                    "pre_script_file":"tests/test_configs/template_store/master_template/pre_script_file_updated.txt",
+                    "post_script_file":"tests/test_configs/template_store/master_template/post_script_file_updated.txt"
+                }
+            },
+            "response_code": 404,
+            "expected_content" : "tests/expected_reponses/template_store/master_template/master_package_does_not_exist.json"
+        },
+        {
+            "name" : "Get list updated master package list",
+            "method":"get",
+            "url_params" :{
+                "master_id" :""
+            },
+            "response_code": 200,
+            "expected_content" : "tests/expected_reponses/template_store/master_template/masters_after_update1.json"
+        }
+    ]
+}

@@ -1,0 +1,17 @@
+{
+    "data": [
+        {
+            "edge_id": "225216",
+            "package_name": "225216.xz",
+            "report": {
+                "downloaded": {
+                    "success": false
+                },
+                "consumed": {
+                    "success": false
+                }
+            },
+            "template_set_version": "0.05"
+        }
+    ]
+}

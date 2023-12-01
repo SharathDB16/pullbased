@@ -1,0 +1,153 @@
+{
+    "url" : "http://pullbased/api/v1.0/template_set/latest?edge_id={edge_id}",
+    "dbfile" : "tests/db_files/retrieve_latest_template_set.sql",
+    "scenarios" :[
+        {
+            "name" : "get latest template set for static default",
+            "url_params" :{
+                "edge_id" :"232425"
+            },
+            "server_configs":{
+                "edge-details":{
+                    "template" : "accurate_responses/edge-details1.json",
+                    "jinja2" : {
+                        "edge_type":"static",
+                        "edge_sub_type":"default"
+                    },
+                    "return_code" : 200
+                }
+            },
+            "response_code": 200,
+            "expected_content" : "tests/expected_reponses/config_store/latest_template_set1.json"
+        },
+        {
+            "name" : "get latest template set for mid default",
+            "url_params" :{
+                "edge_id" :"bbaa33"
+            },
+            "server_configs":{
+                "edge-details":{
+                    "template" : "accurate_responses/edge-details1.json",
+                    "jinja2" : {
+                        "edge_type":"mid",
+                        "edge_sub_type":"default"
+                    },
+                    "return_code" : 200
+                }
+            },
+            "response_code": 200,
+            "expected_content" : "tests/expected_reponses/config_store/latest_template_set2.json"
+        },
+        {
+            "name" : "get latest template set for mobile default",
+            "url_params" :{
+                "edge_id" :"baa334"
+            },
+            "server_configs":{
+                "edge-details":{
+                    "template" : "accurate_responses/edge-details1.json",
+                    "jinja2" : {
+                        "edge_type":"mobile",
+                        "edge_sub_type":"default"
+                    },
+                    "return_code" : 200
+                }
+            },
+            "response_code": 200,
+            "expected_content" : "tests/expected_reponses/config_store/latest_template_set3.json"
+        },
+        {
+            "name" : "get latest template set for mobile c2cbus",
+            "url_params" :{
+                "edge_id" :"445681"
+            },
+            "server_configs":{
+                "edge-details":{
+                    "template" : "accurate_responses/edge-details1.json",
+                    "jinja2" : {
+                        "edge_type":"mobile",
+                        "edge_sub_type":"c2cbus"
+                    },
+                    "return_code" : 200
+                }
+            },
+            "response_code": 200,
+            "expected_content" : "tests/expected_reponses/config_store/latest_template_set4.json"
+        },
+        {
+            "name" : "Error case, invalid edge id, with proper IPAM resposne",
+            "url_params" :{
+                "edge_id" :"a234567"
+            },
+            "server_configs":{
+                "edge-details":{
+                    "template" : "response404.json",
+                    "jinja2" : {
+                        "edge_type":"mobile",
+                        "edge_sub_type":"c2cbus"
+                    },
+                    "return_code" : 400
+                }
+            },
+            "response_code": 400,
+            "expected_content" : "tests/expected_reponses/config_store/invalid_edge_id.json"
+        },
+        {
+            "name" : "Error case, invalid edge id, with invalid IPAM response",
+            "url_params" :{
+                "edge_id" :"1234567"
+            },
+            "server_configs":{
+                "edge-details":null
+            },
+            "response_code": 400,
+            "expected_content" : "tests/expected_reponses/config_store/invalid_edge_id.json"
+        },
+        {
+            "name" : "Error case, no edge details",
+            "url_params" :{
+                "edge_id" :"432451"
+            },
+            "server_configs":{
+                "edge-details":{
+                    "template" : "response404.txt",
+                    "jinja2" : {
+                        "edge_type":"mobile",
+                        "edge_sub_type":"c2cbus"
+                    },
+                    "return_code" : 400
+                }
+            },
+            "response_code": 503,
+            "expected_content" : "tests/expected_reponses/config_store/dp_server_error.json"
+        },
+        {
+            "name" : "Error case, unknown edge",
+            "url_params" :{
+                "edge_id" :"123456"
+            },
+            "server_configs":{
+                "edge-details":{
+                    "template" : "accurate_responses/edge-details2.json",
+                    "return_code" : 404
+                }
+            },
+            "response_code": 404,
+            "expected_content" : "tests/expected_reponses/config_store/edge_not_found_error.json"
+        },
+        {
+            "name" : "Error case, missing edge data",
+            "url_params" :{
+                "edge_id" :"123456"
+            },
+            "server_configs":{
+                "edge-details":{
+                    "template" : "inaccurate_responses/edge-details.json",
+                    "return_code" : 200
+                }
+            },
+            "response_code": 503,
+            "expected_content" : "tests/expected_reponses/config_store/edge_data_missing.json"
+        }
+    ]
+}

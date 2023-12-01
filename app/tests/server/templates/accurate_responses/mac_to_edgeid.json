@@ -1,0 +1,31 @@
+{
+    "meta": {
+        "code": 200
+    },
+    "data": {
+        "touchPointName": "TP_4_Coach_U-1291_zhoqsocorpifrxvvopcc_1575023958246_0",
+        "userId": "sylvester.dsilva@sugarboxnetworks.com",
+        "edgeType": "mobile",
+        "subscribers": 1024,
+        "ap": 4,
+        "cpe": 0,
+        "switchType": 0,
+        "mobile": 9136600896,
+        "wdvpnIp": "10.255.255.188",
+        "edgeSubType": "kontronmetro",
+        "parentEdgeId": null,
+        "description": "1a3f98",
+        "address": "1a3f98",
+        "l2Switch": 0,
+        "l2SwitchType": 0,
+        "noOfYards": 0,
+        "stateName": "NA",
+        "stateCode": "NA",
+        "templateId": 0,
+        "yards": null,
+        "pseudoTps": null,
+        "dpName": "CMRL",
+        "edgeId": "1a3f98",
+        "switch": 0
+    }
+}
