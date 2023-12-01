@@ -72,12 +72,13 @@ node {
     }
 
     stage('Push To DockerHub') {
-            steps {
-                script {
-                    docker.withRegistry('https://registry.hub.docker.com', registryCredential) {
-                        docker.image("${imageTag}").push()
-                    }
+            try {
+                docker.withRegistry('https://registry.hub.docker.com', registryCredential) {
+                    docker.image("${imageTag}").push()
                 }
+            } catch (e) {
+                    cleanEnvironment()
+                    throw e
             }
     }
 
