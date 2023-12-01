@@ -40,4 +40,3 @@ WORKDIR  /code
 # To use this image run :
 # docker contaienr run -v $(pwd)/app:/code <image name> <Command to run the code from app folder>
 # Make sure your current directory has the app folder when you run the command.
-CMD echo "Please read the Docker File to understand how to use this image"

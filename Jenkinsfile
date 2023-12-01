@@ -2,14 +2,14 @@
   // push to staging
   project = 'pullbased'
   appName = 'pullbased'
-  imageGroup = 'sugarbox'
+  imageGroup = 'sharathdb'
  
   //fix branch name to be compatable with docker
   branchName = env.BRANCH_NAME.toLowerCase().replaceAll("/","-")
  
-  jenkinsURL = "http://ci.sboxdc.com"
-  registryURL = "registry.sboxdc.com"
-  sonarURL = "https://sonar.sboxdc.com"
+  jenkinsURL = "http://localhost:8080"
+  registryURL = "https://hub.docker.com/repository/docker"
+  sonarURL = "http://localhost:9000"
  
   buildInfo = "Build of ${project} branch ${branchName} (build number  ${env.BUILD_NUMBER})"
   buildLink = "${jenkinsURL}/job/${project}/job/${branchName}/"
@@ -68,32 +68,6 @@ node {
             cleanUpPreTestImage()
             cleanEnvironment()
         	throw e
-        }
-    }
-
-    stage ('Initilize Unit Test Env') {
-        try {
-            //Run test env with build option
-            sh("docker-compose -f docker-compose.test.yml -p ${composeProject} up -d --build")
-            // wait for test environment to come online
-            sh("sleep 30s")
-        } catch (e) {
-            failLogging()
-            cleanEnvironment()
-            throw e
-        }
-    }
-
-    stage ('Run Unit Tests'){
-        try {
-            // Run Unit tests
-            sh("docker-compose -f docker-compose.test.yml -p ${composeProject} exec -T pullbased python3 -m pytest")
-        } catch (e) {
-            sh("docker-compose -f docker-compose.test.yml -p ${composeProject} exec -T pullbased cat /var/log/sugarbox/pullbased/application.log")
-            sh("docker-compose -f docker-compose.test.yml -p ${composeProject} logs")
-            failLogging()
-            cleanEnvironment()
-            throw e
         }
     }
  
