@@ -15,10 +15,10 @@
   buildLink = "${jenkinsURL}/job/${project}/job/${branchName}/"
  
   //imageTag = "${registryURL}/${imageGroup}/${appName}:${branchName}.${env.BUILD_NUMBER}"
-  productionLatestTag = "${registryURL}/${imageGroup}/${appName}:latest"
-  stagingLatestTag = "${registryURL}/${imageGroup}/${appName}:staging"
-  uatLatestTag = "${registryURL}/${imageGroup}/${appName}:uat"
-  devLatestTag = "${registryURL}/${imageGroup}/${appName}:dev"
+  //productionLatestTag = "${registryURL}/${imageGroup}/${appName}:latest"
+  //stagingLatestTag = "${registryURL}/${imageGroup}/${appName}:staging"
+  //uatLatestTag = "${registryURL}/${imageGroup}/${appName}:uat"
+  //devLatestTag = "${registryURL}/${imageGroup}/${appName}:dev"
  
   isSprintBranch  = branchName ==~ "^staging\$"
   isDevBranch  = branchName ==~ "^develop\$"
@@ -26,13 +26,13 @@
   isProductionBranch = branchName ==~ "^master\$"
  
   if ("${branchName}" == "production") {
-      imageTag = "${registryURL}/${imageGroup}/${appName}:${branchName}.${env.BUILD_NUMBER}"
+      imageTag = "${imageGroup}/${appName}:${branchName}.${env.BUILD_NUMBER}"
   } else {
-      imageTag = "${registryURL}/${imageGroup}/${appName}:${branchName}"
+      imageTag = "${imageGroup}/${appName}:${branchName}"
   }
  
   containerName = "${appName}.${branchName}.${env.BUILD_NUMBER}"
-  composeProject = "${project}${branchName}${env.BUILD_NUMBER}".replaceAll("-","").replaceAll("_","").replaceAll("\\W","")
+  //composeProject = "${project}${branchName}${env.BUILD_NUMBER}".replaceAll("-","").replaceAll("_","").replaceAll("\\W","")
  
   def cleanEnvironment(){
       sh("docker rmi -f ${imageTag}")
