@@ -5,7 +5,7 @@
   imageGroup = 'sharathdb'
  
   //fix branch name to be compatable with docker
-  branchName = env.BRANCH_NAME.toLowerCase().replaceAll("/","-")
+  branchName = 'master'
  
   jenkinsURL = "http://localhost:8080"
   registryURL = "https://hub.docker.com/repository/docker"
