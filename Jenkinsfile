@@ -70,20 +70,15 @@ node {
         	throw e
         }
     }
- 
-    stage("Code Analysis"){
-        try {
-          //Define Sonar Scanner Tool
-          //def sonarqubeScannerHome = tool name: 'Sonar', type: 'hudson.plugins.sonar.SonarInstallation'
-          withSonarQubeEnv('sonar') {
-              def sonarqubeScannerHome = tool name: 'sonar', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
-              sh ("cd app && ${sonarqubeScannerHome}/bin/sonar-scanner -e -X -Dsonar.host.url=${sonarURL} -Dsonar.branch=${branchName} || echo 0")
-          }
-      } catch (e) {
-          failLogging()
-          cleanEnvironment()
-          throw e
-      }
+
+    stage('Push To DockerHub') {
+            steps {
+                script {
+                    docker.withRegistry('https://registry.hub.docker.com', registryCredential) {
+                        docker.image("${imageTag}").push()
+                    }
+                }
+            }
     }
 
     stage ('Clean up Testing Environment'){
