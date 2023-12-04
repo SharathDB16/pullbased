@@ -25,7 +25,7 @@ RUN pip install -r app/requirements.txt pytest==6.2.4 jsonschema==3.2.0
 RUN chmod +x deploy/entrypoint.sh deploy/wait-for-it.sh
 
 # Set the entry point.
-ENTRYPOINT [ "/entrypoint.sh" ]
+ENTRYPOINT [ "deploy/entrypoint.sh" ]
 
 # We expect the user to use the volume command to 
 # attach an external folder to the code folder.
