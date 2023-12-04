@@ -2,6 +2,8 @@ FROM python:3
 
 LABEL maintainer="Sharath DB <sharath.db@sugarboxnetworks.com>"
 
+WORKDIR /code
+
 ENV NODE_ENV=docker
 
 ENV TZ="Asia/Calcutta"
@@ -15,16 +17,12 @@ RUN DEBIAN_FRONTEND="noninteractive" apt-get update && apt-get install -y tzdata
                                        nginx=1.14.2-2+deb10u3; rm -rf /var/lib/apt/lists/*;
 
 # Copy in and requirements file for the project and then install the requirements.
-COPY app/requirements.txt .
-RUN pip install -r requirements.txt pytest==6.2.4 jsonschema==3.2.0
+COPY . .
+RUN pip install -r app/requirements.txt pytest==6.2.4 jsonschema==3.2.0
 # We install pytest as a requirement for running the tests.
 
-# Copy in entrypoint.sh and wait_for_it.sh
-COPY deploy/entrypoint.sh .
-COPY deploy/wait-for-it.sh .
-
 # Set both shell scripts as executables
-RUN chmod +x entrypoint.sh wait-for-it.sh
+RUN chmod +x deploy/entrypoint.sh deploy/wait-for-it.sh
 
 # Set the entry point.
 ENTRYPOINT [ "/entrypoint.sh" ]
@@ -33,8 +31,6 @@ ENTRYPOINT [ "/entrypoint.sh" ]
 # attach an external folder to the code folder.
 # Look up -v for docker container run.
 # Look up volume for docker compose
-RUN mkdir /code
-WORKDIR  /code
 
 # Help message for the user.
 # To use this image run :
