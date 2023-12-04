@@ -10,6 +10,7 @@
   jenkinsURL = "http://localhost:8080"
   registryURL = "https://hub.docker.com/repository/docker"
   //sonarURL = "http://localhost:9000"
+  registryCredential = 'DOCKERHUB'
  
   buildInfo = "Build of ${project} branch ${branchName} (build number  ${env.BUILD_NUMBER})"
   buildLink = "${jenkinsURL}/job/${project}/job/${branchName}/"
