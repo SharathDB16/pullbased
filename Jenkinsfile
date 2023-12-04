@@ -41,7 +41,6 @@ node {
         try {
             sh("docker build -f deploy/Dockerfile -t ${imageTag} .")
         } catch (e) {
-            cleanUpPreTestImage()
             cleanEnvironment()
         	throw e
         }
