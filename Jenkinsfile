@@ -38,26 +38,12 @@ node {
     checkout scm
  
     stage ('Build base docker image') {
-        try {
             sh("docker build -f deploy/Dockerfile -t ${imageTag} .")
-        } catch (e) {
-            cleanEnvironment()
-        	throw e
-        }
     }
 
     stage('Push To DockerHub') {
-            try {
                 docker.withRegistry('https://registry.hub.docker.com', registryCredential) {
                     docker.image("${imageTag}").push()
                 }
-            } catch (e) {
-                    cleanEnvironment()
-                    throw e
-            }
-    }
-
-    stage ('Clean up Testing Environment'){
-          cleanEnvironment()
     }
 }
