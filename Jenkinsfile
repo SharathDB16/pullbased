@@ -38,12 +38,18 @@ node {
     checkout scm
  
     stage ('Build base docker image') {
+        script {
             sh("docker build -f deploy/Dockerfile -t ${imageTag} .")
+        }
+            
     }
 
     stage('Push To DockerHub') {
-                docker.withRegistry('https://registry.hub.docker.com', registryCredential) {
+        script {
+            docker.withRegistry('https://registry.hub.docker.com', registryCredential) {
                     docker.image("${imageTag}").push()
                 }
+        }
+                
     }
 }
