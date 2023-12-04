@@ -9,7 +9,7 @@
  
   jenkinsURL = "http://localhost:8080"
   registryURL = "https://hub.docker.com/repository/docker"
-  sonarURL = "http://localhost:9000"
+  //sonarURL = "http://localhost:9000"
  
   buildInfo = "Build of ${project} branch ${branchName} (build number  ${env.BUILD_NUMBER})"
   buildLink = "${jenkinsURL}/job/${project}/job/${branchName}/"
@@ -33,30 +33,6 @@
  
   containerName = "${appName}.${branchName}.${env.BUILD_NUMBER}"
   //composeProject = "${project}${branchName}${env.BUILD_NUMBER}".replaceAll("-","").replaceAll("_","").replaceAll("\\W","")
- 
-  def cleanEnvironment(){
-      sh("docker rmi -f ${imageTag}")
-      sh("docker-compose -f docker-compose.test.yml down")
-      sh("docker-compose -f docker-compose.test.yml down --rmi local -v")
-      sh("docker-compose -f docker-compose.test.yml -p ${composeProject} stop")
-      sh("docker-compose -f docker-compose.test.yml -p ${composeProject} down --rmi local -v")
-      cleanWs()
-  }
- 
-  def cleanUpPreTestImage(){
-      sh("docker rmi -f ${imageTag}")
-  }
- 
-  def cleanUpContainer(){
-      sh("docker stop ${containerName}")
-      sh("docker rm ${containerName}")
-  }
- 
-  def failLogging(){
-      sh("docker images")
-      sh("df -i")
-  }
-
  
 node {
     checkout scm
