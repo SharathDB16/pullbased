@@ -24,9 +24,6 @@ RUN pip install -r app/requirements.txt pytest==6.2.4 jsonschema==3.2.0
 # Set both shell scripts as executables
 RUN chmod +x deploy/entrypoint.sh deploy/wait-for-it.sh
 
-# Set the entry point.
-ENTRYPOINT [ "deploy/entrypoint.sh" ]
-
 # We expect the user to use the volume command to 
 # attach an external folder to the code folder.
 # Look up -v for docker container run.
