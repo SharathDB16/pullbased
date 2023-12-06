@@ -1,2 +1,0 @@
-This is the 2nd uploaded file.
-This file will be attached to template id 1 only

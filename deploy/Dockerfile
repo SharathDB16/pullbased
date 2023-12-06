@@ -2,7 +2,7 @@ FROM python:3
 
 LABEL maintainer="Sharath DB <sharath.db@sugarboxnetworks.com>"
 
-WORKDIR /code
+WORKDIR  /code
 
 ENV NODE_ENV=docker
 
@@ -19,17 +19,9 @@ RUN DEBIAN_FRONTEND="noninteractive" apt-get update && apt-get install -y tzdata
 # Copy in and requirements file for the project and then install the requirements.
 COPY . .
 RUN pip install -r app/requirements.txt pytest==6.2.4 jsonschema==3.2.0
-# We install pytest as a requirement for running the tests.
 
 # Set both shell scripts as executables
 RUN chmod +x deploy/entrypoint.sh deploy/wait-for-it.sh
 
-# We expect the user to use the volume command to 
-# attach an external folder to the code folder.
-# Look up -v for docker container run.
-# Look up volume for docker compose
-
-# Help message for the user.
-# To use this image run :
-# docker contaienr run -v $(pwd)/app:/code <image name> <Command to run the code from app folder>
-# Make sure your current directory has the app folder when you run the command.
+ENTRYPOINT [ "deploy/entrypoint.sh" ]
+#CMD [ "python3", "copyAndBuildDeb.py", "-v", "0.0.1", "-e", "Staging"]

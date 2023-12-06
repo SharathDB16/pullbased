@@ -1,1 +1,0 @@
-This is an uninstall file for master teplate id 1 after it is updated

@@ -1,2 +1,0 @@
-This is the first uploaded file.
-This file will be uploaded to template ids 1 and 2
