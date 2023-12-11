@@ -69,4 +69,5 @@ node {
            steps {
                 sh("scp -r app/*.deb ubuntu@3.91.76.141:~/packages")
         }
+    }
 }
