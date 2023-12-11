@@ -7,7 +7,7 @@ pipeline {
         imageGroup = 'sharathdb'
         branchName = 'master'
         jenkinsURL = 'http://localhost:8080'
-        registryURL = 'https://registry.hub.docker.com'
+        registryURL = 'https://hub.docker.com/repository/docker'
         sonarURL = 'http://localhost:9000'
         registryCredential = 'DOCKERHUB'
     }
@@ -17,7 +17,7 @@ pipeline {
             steps {
                 script {
                     if (branchName ==~ '^master$') {
-                        imageTag = "${imageGroup}/${appName}:${branchName}.${env.BUILD_NUMBER}"
+                        imageTag = "${imageGroup}/${appName}:${branchName}"
                     } else {
                         imageTag = "${imageGroup}/${appName}:${branchName}"
                     }
@@ -34,7 +34,7 @@ pipeline {
             }
             steps {
                 script {
-                    withDockerRegistry(credentialsId: registryCredential, url: registryURL) {
+                    withDockerRegistry(credentialsId: registryCredential, url: 'https://registry.hub.docker.com') {
                         docker.image(imageTag).push()
                     }
                 }
