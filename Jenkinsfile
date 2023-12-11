@@ -29,12 +29,9 @@ pipeline {
         }
 
         stage('Push To DockerHub') {
-            when {
-                expression { currentBuild.resultIsBetterOrEqualTo('UNSTABLE') }
-            }
             steps {
                 script {
-                    withDockerRegistry(credentialsId: registryCredential, url: 'https://registry.hub.docker.com/sharathdb/pullbased') {
+                    withDockerRegistry(credentialsId: registryCredential, url: 'https://registry.hub.docker.com') {
                         docker.image(imageTag).push()
                     }
                 }
