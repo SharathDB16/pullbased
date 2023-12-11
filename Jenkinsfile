@@ -16,7 +16,11 @@ pipeline {
         stage('Build base docker image') {
             steps {
                 script {
-                    imageTag = "${imageGroup}/${appName}:${branchName}.${env.BUILD_NUMBER}" : "${imageGroup}/${appName}:${branchName}"
+                    if (branchName ==~ '^master$') {
+                        imageTag = "${imageGroup}/${appName}:${branchName}.${env.BUILD_NUMBER}"
+                    } else {
+                        imageTag = "${imageGroup}/${appName}:${branchName}"
+                    }
                     containerName = "${appName}.${branchName}.${env.BUILD_NUMBER}"
 
                     sh "docker build -f deploy/Dockerfile -t ${imageTag} ."
@@ -25,6 +29,9 @@ pipeline {
         }
 
         stage('Push To DockerHub') {
+            when {
+                expression { currentBuild.resultIsBetterOrEqualTo('UNSTABLE') }
+            }
             steps {
                 script {
                     withDockerRegistry(credentialsId: registryCredential, url: 'https://registry.hub.docker.com') {
