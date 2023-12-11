@@ -34,8 +34,8 @@ pipeline {
             }
             steps {
                 script {
-                    withDockerRegistry(credentialsId: registryCredential, url: registryURL) {
-                        docker.image(imageTag).push()
+                    docker.withRegistry('https://registry.hub.docker.com/sharathdb/pullbased', 'dockerHubCredentials') {
+                    docker.image('sharathdb/pullbased:master').push()
                     }
                 }
             }
