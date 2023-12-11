@@ -56,18 +56,16 @@ node {
     }
 
     stage('SonarQube Analysis') {
-            steps {
-                script {
-                    withSonarQubeEnv('sonar') {
-                        sh "${sonarqubeScannerHome}/bin/sonar-scanner"
-                    }
-                }
+        script {
+            withSonarQubeEnv('sonar') {
+                sh "${sonarqubeScannerHome}/bin/sonar-scanner"
             }
+        }
     }
 
     stage('Deploy') {
-           steps {
-                sh("scp -r app/*.deb ubuntu@3.91.76.141:~/packages")
-        }
+        script {
+            sh("scp -r app/*.deb ubuntu@3.91.76.141:~/packages")
+        }     
     }
 }
