@@ -48,7 +48,7 @@ node {
 
     stage('Push To DockerHub') {
         script {
-            docker.withRegistry('https://registry.hub.docker.com', registryCredential) {
+            docker.withRegistry('https://registry.hub.docker.com/sharathdb/pullbased', registryCredential) {
                     docker.image("${imageTag}").push()
             }
         }
