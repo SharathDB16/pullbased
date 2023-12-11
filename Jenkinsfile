@@ -29,9 +29,12 @@ pipeline {
         }
 
         stage('Push To DockerHub') {
+            when {
+                expression { currentBuild.resultIsBetterOrEqualTo('UNSTABLE') }
+            }
             steps {
                 script {
-                    withDockerRegistry(credentialsId: registryCredential, url: 'https://registry.hub.docker.com') {
+                    withDockerRegistry(credentialsId: registryCredential, url: registryURL) {
                         docker.image(imageTag).push()
                     }
                 }
