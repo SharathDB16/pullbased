@@ -16,7 +16,7 @@ pipeline {
         stage('Build base docker image') {
             steps {
                 script {
-                    imageTag = isProductionBranch ? "${imageGroup}/${appName}:${branchName}.${env.BUILD_NUMBER}" : "${imageGroup}/${appName}:${branchName}"
+                    imageTag = "${imageGroup}/${appName}:${branchName}.${env.BUILD_NUMBER}" : "${imageGroup}/${appName}:${branchName}"
                     containerName = "${appName}.${branchName}.${env.BUILD_NUMBER}"
 
                     sh "docker build -f deploy/Dockerfile -t ${imageTag} ."
