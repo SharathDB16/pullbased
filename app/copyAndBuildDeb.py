@@ -8,25 +8,25 @@ repo_name = "deb-build"
 package_name = "pullbasedagent-test"
 destination = "{}/usr/local/{}".format(repo_name, package_name)
 control_file = "{}/DEBIAN/control".format(repo_name)
-username = "publisher"
-password = "32lW~XL525Bd62a"
+username = "ubuntu"
+#password = "32lW~XL525Bd62a"
 
 
 class DebPackageGenerator:
     def __init__(self, args):
         self.new_version = args.version
         if args.environment == "Development":
-            self.env = "repo.dev.sboxdc.com"
-            self.path = "{}@{}:/home/{}/packages".format(username, self.env, username)
+            self.env = "www.example.com"
+            self.path = "{}@{}:/home/{}/app".format(username, self.env, username)
             self.repo = "testing"
             self.publish()
         elif args.environment == "Staging":
-            self.env = "repo.stg.sboxdc.com"
+            self.env = "3.91.76.141"
             self.path = "{}@{}:/home/{}/packages".format(username, self.env, username)
             self.repo = "unstable"
             self.publish()
         elif args.environment == "Production":
-            self.env = "repo.sboxdc.com"
+            self.env = "www.example.com"
             self.path = "{}@{}:/home/{}/packages".format(username, self.env, username)
             self.repo = "stable"
             self.publish()
@@ -38,10 +38,10 @@ class DebPackageGenerator:
         try:
             ssh_obj = pxssh.pxssh()
             ssh_obj.login(self.env, username, password)
-            ssh_obj.sendline('cd /home/publisher/packages')
+            ssh_obj.sendline('cd /home/ubuntu/packages')
             if "dev" in self.env:
                 print("Adding repo in development.")
-            elif "stg" in self.env:
+            elif "141" in self.env:
                 print("Adding repo in staging.")
             else:
                 print("Adding repo in production.")
@@ -72,7 +72,7 @@ class DebPackageGenerator:
 
         package_name_deploy = '{}_{}.deb'.format(package_name, self.new_version)
         self.run_on_shell('dpkg-deb --build {} {}'.format(repo_name, package_name_deploy))
-        self.run_on_shell('sshpass -p {} scp -q -o StrictHostKeyChecking=no {} {}'.format(password, package_name_deploy, self.path))
+        self.run_on_shell('scp -i /home/sharathdb/Downloads/key.pem {} {}@{}:{}'.format(package_name_deploy, username, self.env, self.path))
         self.run_on_shell('rm -r {}/usr'.format(repo_name))
         self.remote_exec(package_name_deploy)
 
