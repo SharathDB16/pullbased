@@ -37,7 +37,6 @@ class DebPackageGenerator:
     def remote_exec(self, package_name_deploy):
         try:
             ssh_obj = pxssh.pxssh()
-            ssh_obj.login(self.env, username, password)
             ssh_obj.sendline('cd /home/ubuntu/packages')
             if "dev" in self.env:
                 print("Adding repo in development.")
