@@ -7,7 +7,7 @@ pipeline {
         imageGroup = 'sharathdb'
         branchName = 'master'
         jenkinsURL = 'http://localhost:8080'
-        registryURL = 'https://hub.docker.com/repository/docker/sharathdb/pullbased'
+        registryURL = 'https://hub.docker.com/repository/docker'
         sonarURL = 'http://localhost:9000'
         registryCredential = 'DOCKERHUB'
     }
