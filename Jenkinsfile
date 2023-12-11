@@ -37,6 +37,7 @@
   //composeProject = "${project}${branchName}${env.BUILD_NUMBER}".replaceAll("-","").replaceAll("_","").replaceAll("\\W","")
  
 node {
+    agent any
     checkout scm
  
     stage ('Build base docker image') {
