@@ -50,22 +50,8 @@ node {
         script {
             docker.withRegistry('https://registry.hub.docker.com', registryCredential) {
                     docker.image("${imageTag}").push()
-                }
-        }
-                
-    }
-
-    stage('SonarQube Analysis') {
-        script {
-            withSonarQubeEnv('sonar') {
-                sh "${sonarqubeScannerHome}/bin/sonar-scanner"
             }
         }
-    }
-
-    stage('Deploy') {
-        script {
-            sh("scp -r app/*.deb ubuntu@3.91.76.141:~/packages")
-        }     
+                
     }
 }
